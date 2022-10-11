@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.crud_mobile_004_achmadsr">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="crud_mobile_004_achmadsr"
         android:name="${applicationName}"
