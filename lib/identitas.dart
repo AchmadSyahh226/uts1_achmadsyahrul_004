@@ -21,9 +21,9 @@ class _IdentitasState extends State<Identitas> {
             child: Column(
               children: <Widget>[
                 Text(widget.list[widget.index]['nama_santri'], style: TextStyle(fontSize: 15),),
-                Text("Nomor Santri : ${widget.list[widget.index]['nama_santri']}", style: TextStyle(fontSize: 15),),
-                Text("Asal : ${widget.list[widget.index]['nama_santri']}", style: TextStyle(fontSize: 15),),
-                Text("Nomor Telepon : ${widget.list[widget.index]['nama_santri']}", style: TextStyle(fontSize: 15),),
+                Text("Nomor Santri : ${widget.list[widget.index]['no_santri']}", style: TextStyle(fontSize: 15),),
+                Text("Asal : ${widget.list[widget.index]['asal_santri']}", style: TextStyle(fontSize: 15),),
+                Text("Nomor Telepon : ${widget.list[widget.index]['no_telp_santri']}", style: TextStyle(fontSize: 15),),
                 Padding(padding: const EdgeInsets.all(10),),
               ],
             ),
