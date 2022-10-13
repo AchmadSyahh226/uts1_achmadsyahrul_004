@@ -7,6 +7,7 @@ class Identitas extends StatefulWidget {
   int index;
   Identitas({Key? key, required this.index, required this.list}) : super(key: key);
 
+
   @override
   State<Identitas> createState() => _IdentitasState();
 }
@@ -22,14 +23,16 @@ class _IdentitasState extends State<Identitas> {
           child: Center(
             child: Column(
               children: <Widget>[
-                Text(widget.list[widget.index]['nama_santri'], style: TextStyle(fontSize: 15),),
-                Text("Nomor Santri : ${widget.list[widget.index]['no_santri']}", style: TextStyle(fontSize: 15),),
-                Text("Asal : ${widget.list[widget.index]['asal_santri']}", style: TextStyle(fontSize: 15),),
-                Text("Nomor Telepon : ${widget.list[widget.index]['no_telp_santri']}", style: TextStyle(fontSize: 15),),
+                Text(widget.list[widget.index]['nama_santri'], style: TextStyle(fontSize: 20),),
+                Text("Nomor Santri : ${widget.list[widget.index]['no_santri']}", style: TextStyle(fontSize: 20),),
+                Text("Asal : ${widget.list[widget.index]['asal_santri']}", style: TextStyle(fontSize: 20),),
+                Text("Nomor Telepon : ${widget.list[widget.index]['no_telp_santri']}", style: TextStyle(fontSize: 20),),
                 Padding(padding: const EdgeInsets.all(10),),
-
+                
                 Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
+                    
                     ElevatedButton(
                       child: Text("EDIT"),
                       onPressed: () {} ,
