@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Identitas extends StatefulWidget {
   List list;
   int index;
-  Identitas({this.index, this.list})
+  Identitas({required this.index,required this.list})
 
   @override
   State<Identitas> createState() => _IdentitasState();
