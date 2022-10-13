@@ -36,10 +36,10 @@ class _MyAppState extends State<MyApp> {
           if (snapshot.hasError) print(snapshot.error);
 
           return snapshot.hasData
-              ? new ItemList(
-                  list: snapshot.data,
+              ? ItemList(
+                  list: snapshot.data!,
                 )
-              : new Center(
+              : Center(
                   child: CircularProgressIndicator(),
                 );
         },
@@ -49,17 +49,24 @@ class _MyAppState extends State<MyApp> {
 }
 
 class ItemList extends StatelessWidget {
-  
   final List list;
-  ItemList({this.list});
+  const ItemList({required this.list});
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: list == null ? 0 : list.length,
-        itemBuilder: (context, i) {
-          return new Text(list[i]['nama_santri']);
-        }
+      itemCount: list == null ? 0 : list.length,
+      itemBuilder: (context, i) {
+        return Container(
+          padding: const EdgeInsets.all(3.0),
+          child: Card(
+            child: new ListTile(
+              title: Text(list[i]['nama_santri']),
+              leading: Icon(Icons.widgets),
+            ),
+          ),
+        );
+      },
     );
   }
 }
