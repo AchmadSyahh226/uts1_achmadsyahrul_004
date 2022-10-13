@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import './Identitas.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -59,11 +60,15 @@ class ItemList extends StatelessWidget {
       itemBuilder: (context, i) {
         return Container(
           padding: const EdgeInsets.all(3.0),
-          child: Card(
-            child: new ListTile(
-              title: Text(list[i]['nama_santri']),
-              leading: Icon(Icons.widgets),
+          child: new GestureDetector(
+            onTap: ()=>Navigator.of(context).push(
+              new MaterialPageRoute(builder: (BuildContext context)=> new Identitas(list: list, index: i,))),
+            child: Card(
+              child: new ListTile(
+                title: Text(list[i]['nama_santri']),
+                leading: Icon(Icons.widgets),
             ),
+          ),
           ),
         );
       },
