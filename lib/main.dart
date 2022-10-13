@@ -12,8 +12,6 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-
-
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -31,6 +29,8 @@ class _MyAppState extends State<MyApp> {
       appBar: AppBar(
         title: Text("Data Santri Lomba FASI"),
       ),
+      floatingActionButton:
+          FloatingActionButton(child: Icon(Icons.add), onPressed: () {}),
       body: FutureBuilder<List>(
         future: ambilData(),
         builder: (context, snapshot) {
@@ -61,14 +61,17 @@ class ItemList extends StatelessWidget {
         return Container(
           padding: const EdgeInsets.all(3.0),
           child: new GestureDetector(
-            onTap: ()=>Navigator.of(context).push(
-              new MaterialPageRoute(builder: (BuildContext context)=> new Identitas(list: list, index: i,))),
+            onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                builder: (BuildContext context) => new Identitas(
+                      list: list,
+                      index: i,
+                    ))),
             child: Card(
               child: new ListTile(
                 title: Text(list[i]['nama_santri']),
                 leading: Icon(Icons.widgets),
+              ),
             ),
-          ),
           ),
         );
       },
