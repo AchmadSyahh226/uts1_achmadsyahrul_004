@@ -1,4 +1,7 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class TambahData extends StatefulWidget {
   const TambahData({Key? key}) : super(key: key);
@@ -13,6 +16,17 @@ class _TambahDataState extends State<TambahData> {
   TextEditingController controllerNama = new TextEditingController();
   TextEditingController controllerAsal = new TextEditingController();
   TextEditingController controllerNotelp = new TextEditingController();
+
+  void tambahData(){
+    var url = "http://10.0.2.2/my_crud_app/tambahdata.php";
+
+    http.post(Uri.parse(url), body: {
+      "nosantri": controllerNomor.text,
+      "namasantri": controllerNama.text,
+      "asalsantri": controllerAsal.text,
+      "notelpsantri": controllerNotelp.text,
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +68,10 @@ class _TambahDataState extends State<TambahData> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
               ),
-              ElevatedButton(onPressed: () {}, child: Text("TAMBAH DATA"))
+              ElevatedButton(onPressed: () {
+                tambahData();
+                Navigator.pop(context);
+              }, child: Text("TAMBAH DATA"))
             ]),
           ],
         ),
