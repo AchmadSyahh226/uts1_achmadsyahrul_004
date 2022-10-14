@@ -6,7 +6,7 @@ class Identitas extends StatefulWidget {
 
   List list;
   int index;
-  Identitas({Key? key, required this.index, required this.list}) : super(key: key);
+  Identitas({required this.index, required this.list});
 
 
   @override
@@ -38,12 +38,12 @@ class _IdentitasState extends State<Identitas> {
                       child: Text("EDIT"),
                       onPressed: () => Navigator.of(context).push(new MaterialPageRoute(
                 builder: (BuildContext context) => new EditData(list: widget.list, index: widget.index),
-                    ),
+                    ))),
                     ElevatedButton(
                       child: Text("DELETE"),
                       onPressed: () {} ,
                     ),
-                ))],
+                ],
                 ),
               ],
             ),
