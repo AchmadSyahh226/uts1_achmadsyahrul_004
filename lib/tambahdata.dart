@@ -8,6 +8,12 @@ class TambahData extends StatefulWidget {
 }
 
 class _TambahDataState extends State<TambahData> {
+
+  TextEditingController controllerNomor = new TextEditingController();
+  TextEditingController controllerNama = new TextEditingController();
+  TextEditingController controllerAsal = new TextEditingController();
+  TextEditingController controllerNotelp = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,34 +21,39 @@ class _TambahDataState extends State<TambahData> {
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListView(
-          children: <Widget>
-            [Column(children: <Widget>[
+          children: <Widget>[
+            Column(children: <Widget>[
               TextField(
+                controller: controllerNomor,
                 decoration: InputDecoration(
                   hintText: "Nomor Peserta",
                   label: Text("Nomor Peserta"),
                 ),
               ),
               TextField(
+                controller: controllerNama,
                 decoration: InputDecoration(
                   hintText: "Nama Peserta",
                   label: Text("Nama Peserta"),
                 ),
               ),
               TextField(
+                controller: controllerAsal,
                 decoration: InputDecoration(
                   hintText: "Asal Peserta",
                   label: Text("Asal Peserta"),
                 ),
               ),
               TextField(
+                controller: controllerNotelp,
                 decoration: InputDecoration(
                   hintText: "Nomor Telepon Peserta",
                   label: Text("Nomor Telepon Peserta"),
                 ),
               ),
-              Padding(padding: const EdgeInsets.all(10.0),),
-        
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+              ),
               ElevatedButton(onPressed: () {}, child: Text("TAMBAH DATA"))
             ]),
           ],
