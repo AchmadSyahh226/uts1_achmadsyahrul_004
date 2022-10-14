@@ -1,4 +1,3 @@
-import 'package:crud_mobile_004_achmadsr/editdata.dart';
 import 'package:flutter/material.dart';
 import './Editdata.dart';
 
@@ -41,7 +40,7 @@ class _IdentitasState extends State<Identitas> {
                 builder: (BuildContext context) => new EditData(list: widget.list, index: widget.index),
                     ),
                     ElevatedButton(
-                      child: const Text("DELETE"),
+                      child: Text("DELETE"),
                       onPressed: () {} ,
                     ),
                 ))],
