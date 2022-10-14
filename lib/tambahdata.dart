@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -71,7 +69,7 @@ class _TambahDataState extends State<TambahData> {
               ElevatedButton(onPressed: () {
                 tambahData();
                 Navigator.pop(context);
-              }, child: Text("TAMBAH DATA"))
+              }, child: Text("TAMBAH DATA",)),
             ]),
           ],
         ),
