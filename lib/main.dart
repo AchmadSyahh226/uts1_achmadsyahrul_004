@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import './Identitas.dart';
+import './Tambahdata.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -30,7 +31,11 @@ class _MyAppState extends State<MyApp> {
         title: Text("Data Santri Lomba FASI"),
       ),
       floatingActionButton:
-          FloatingActionButton(child: Icon(Icons.add), onPressed: () {}),
+          FloatingActionButton(
+            child: Icon(Icons.add), 
+            onPressed: () => Navigator.of(context).push(new MaterialPageRoute(
+                builder: (BuildContext context) => new TambahData())
+    ),),
       body: FutureBuilder<List>(
         future: ambilData(),
         builder: (context, snapshot) {
