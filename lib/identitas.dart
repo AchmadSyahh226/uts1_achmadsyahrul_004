@@ -1,4 +1,6 @@
+import 'package:crud_mobile_004_achmadsr/editdata.dart';
 import 'package:flutter/material.dart';
+import './Editdata.dart';
 
 class Identitas extends StatefulWidget {
   
@@ -35,14 +37,15 @@ class _IdentitasState extends State<Identitas> {
                     
                     ElevatedButton(
                       child: Text("EDIT"),
-                      onPressed: () {} ,
+                      onPressed: () => Navigator.of(context).push(new MaterialPageRoute(
+                builder: (BuildContext context) => new EditData(list: widget.list, index: widget.index),
                     ),
                     ElevatedButton(
-                      child: Text("DELETE"),
+                      child: const Text("DELETE"),
                       onPressed: () {} ,
                     ),
-                  ],
-                )
+                ))],
+                ),
               ],
             ),
           ),
