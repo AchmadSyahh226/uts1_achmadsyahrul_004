@@ -31,7 +31,7 @@ class _IdentitasState extends State<Identitas> {
         actions: <Widget>[
           ElevatedButton(onPressed: () {
             hapusData();
-            Navigator.of(context).push(MaterialPageRoute(
+            Navigator.of(context).pushReplacement(MaterialPageRoute(
                 builder: (BuildContext context) => MyApp()));
           }, child: const Text("HAPUS")),
           ElevatedButton(onPressed: ()=> Navigator.pop(context), child: const Text("BATAL")),
