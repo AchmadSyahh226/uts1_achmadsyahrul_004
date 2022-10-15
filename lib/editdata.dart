@@ -1,7 +1,5 @@
-import 'package:crud_mobile_004_achmadsr/main.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import './main.dart';
 
 class EditData extends StatefulWidget {
   final List list;
