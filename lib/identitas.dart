@@ -1,3 +1,4 @@
+import 'package:crud_mobile_004_achmadsr/main.dart';
 import 'package:flutter/material.dart';
 import './Editdata.dart';
 import 'package:http/http.dart' as http;
@@ -30,6 +31,8 @@ class _IdentitasState extends State<Identitas> {
         actions: <Widget>[
           ElevatedButton(onPressed: () {
             hapusData();
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (BuildContext context) => MyApp()));
           }, child: const Text("HAPUS")),
           ElevatedButton(onPressed: ()=> Navigator.pop(context), child: const Text("BATAL")),
         ],
