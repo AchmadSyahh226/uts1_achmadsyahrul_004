@@ -10,10 +10,10 @@ class TambahData extends StatefulWidget {
 
 class _TambahDataState extends State<TambahData> {
 
-  TextEditingController controllerNomor = new TextEditingController();
-  TextEditingController controllerNama = new TextEditingController();
-  TextEditingController controllerAsal = new TextEditingController();
-  TextEditingController controllerNotelp = new TextEditingController();
+  TextEditingController controllerNomor = TextEditingController();
+  TextEditingController controllerNama = TextEditingController();
+  TextEditingController controllerAsal = TextEditingController();
+  TextEditingController controllerNotelp = TextEditingController();
 
   void tambahData(){
     var url = "http://10.0.2.2/my_crud_app/tambahdata.php";
@@ -29,7 +29,7 @@ class _TambahDataState extends State<TambahData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Tambah Data")),
+      appBar: AppBar(title: const Text("Tambah Data")),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListView(
@@ -37,39 +37,39 @@ class _TambahDataState extends State<TambahData> {
             Column(children: <Widget>[
               TextField(
                 controller: controllerNomor,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Nomor Peserta",
                   label: Text("Nomor Peserta"),
                 ),
               ),
               TextField(
                 controller: controllerNama,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Nama Peserta",
                   label: Text("Nama Peserta"),
                 ),
               ),
               TextField(
                 controller: controllerAsal,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Asal Peserta",
                   label: Text("Asal Peserta"),
                 ),
               ),
               TextField(
                 controller: controllerNotelp,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Nomor Telepon Peserta",
                   label: Text("Nomor Telepon Peserta"),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
+              const Padding(
+                padding: EdgeInsets.all(10.0),
               ),
               ElevatedButton(onPressed: () {
                 tambahData();
                 Navigator.pop(context);
-              }, child: Text("TAMBAH DATA",)),
+              }, child: const Text("TAMBAH DATA",)),
             ]),
           ],
         ),

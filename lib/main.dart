@@ -6,9 +6,9 @@ import './Identitas.dart';
 import './Tambahdata.dart';
 
 void main() {
-  runApp(new MaterialApp(
+  runApp(MaterialApp(
     title: "DATA SANTRI LOMBA FASI",
-    home: new MyApp(),
+    home: MyApp(),
   ));
 }
 
@@ -28,13 +28,13 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Data Santri Lomba FASI"),
+        title: const Text("Data Santri Lomba FASI"),
       ),
       floatingActionButton:
           FloatingActionButton(
-            child: Icon(Icons.add), 
-            onPressed: () => Navigator.of(context).push(new MaterialPageRoute(
-                builder: (BuildContext context) => new TambahData())
+            child: const Icon(Icons.add), 
+            onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (BuildContext context) => const TambahData())
     ),),
       body: FutureBuilder<List>(
         future: ambilData(),
@@ -45,7 +45,7 @@ class _MyAppState extends State<MyApp> {
               ? ItemList(
                   list: snapshot.data!,
                 )
-              : Center(
+              : const Center(
                   child: CircularProgressIndicator(),
                 );
         },
@@ -65,16 +65,16 @@ class ItemList extends StatelessWidget {
       itemBuilder: (context, i) {
         return Container(
           padding: const EdgeInsets.all(3.0),
-          child: new GestureDetector(
-            onTap: () => Navigator.of(context).push(new MaterialPageRoute(
-                builder: (BuildContext context) => new Identitas(
+          child: GestureDetector(
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (BuildContext context) => Identitas(
                       list: list,
                       index: i,
                     ))),
             child: Card(
-              child: new ListTile(
+              child: ListTile(
                 title: Text(list[i]['nama_santri']),
-                leading: Icon(Icons.person),
+                leading: const Icon(Icons.person),
               ),
             ),
           ),

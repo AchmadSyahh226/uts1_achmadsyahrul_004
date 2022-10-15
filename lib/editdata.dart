@@ -30,12 +30,12 @@ class _EditDataState extends State<EditData> {
   @override
   void initState() {
     controllerNomor =
-        new TextEditingController(text: widget.list[widget.index]['no_santri']);
-    controllerNama = new TextEditingController(
+        TextEditingController(text: widget.list[widget.index]['no_santri']);
+    controllerNama = TextEditingController(
         text: widget.list[widget.index]['nama_santri']);
-    controllerAsal = new TextEditingController(
+    controllerAsal = TextEditingController(
         text: widget.list[widget.index]['asal_santri']);
-    controllerNotelp = new TextEditingController(
+    controllerNotelp = TextEditingController(
         text: widget.list[widget.index]['no_telp_santri']);
     super.initState();
   }
@@ -43,7 +43,7 @@ class _EditDataState extends State<EditData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Edit Data")),
+      appBar: AppBar(title: const Text("Edit Data")),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListView(
@@ -51,41 +51,41 @@ class _EditDataState extends State<EditData> {
             Column(children: <Widget>[
               TextField(
                 controller: controllerNomor,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Nomor Peserta",
                   label: Text("Nomor Peserta"),
                 ),
               ),
               TextField(
                 controller: controllerNama,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Nama Peserta",
                   label: Text("Nama Peserta"),
                 ),
               ),
               TextField(
                 controller: controllerAsal,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Asal Peserta",
                   label: Text("Asal Peserta"),
                 ),
               ),
               TextField(
                 controller: controllerNotelp,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Nomor Telepon Peserta",
                   label: Text("Nomor Telepon Peserta"),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
+              const Padding(
+                padding: EdgeInsets.all(10.0),
               ),
               ElevatedButton(
                   onPressed: () {
                     editData();
                     Navigator.pop(context);
                   },
-                  child: Text(
+                  child: const Text(
                     "EDIT DATA",
                   )),
             ]),
