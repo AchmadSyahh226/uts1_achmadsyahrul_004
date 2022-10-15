@@ -11,9 +11,22 @@ class Identitas extends StatefulWidget {
 
   @override
   State<Identitas> createState() => _IdentitasState();
+
 }
 
 class _IdentitasState extends State<Identitas> {
+
+  void confirm(){
+    AlertDialog alertDialog = new AlertDialog(
+        content: Text("Apakah Anda yakin ingin menghapus '${widget.list[widget.index]['nama_santri']}' ?"),
+        actions: <Widget>[
+          ElevatedButton(onPressed: (){}, child: Text("HAPUS")),
+          ElevatedButton(onPressed: ()=> Navigator.pop(context), child: Text("BATAL")),
+        ],
+    );
+    showDialog(context: context, builder: (BuildContext context) => alertDialog, );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +54,7 @@ class _IdentitasState extends State<Identitas> {
                     ))),
                     ElevatedButton(
                       child: Text("DELETE"),
-                      onPressed: () {} ,
+                      onPressed: () => confirm() ,
                     ),
                 ],
                 ),
