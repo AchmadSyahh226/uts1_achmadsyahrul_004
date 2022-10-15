@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './Editdata.dart';
+import 'package:http/http.dart' as http;
 
 class Identitas extends StatefulWidget {
   
@@ -16,11 +17,15 @@ class Identitas extends StatefulWidget {
 
 class _IdentitasState extends State<Identitas> {
 
+  void hapusData(){
+    var url = "http://10.0.2.2/my_crud_app/tambahdata.php";
+  }
+
   void confirm(){
     AlertDialog alertDialog = new AlertDialog(
         content: Text("Apakah Anda yakin ingin menghapus '${widget.list[widget.index]['nama_santri']}' ?"),
         actions: <Widget>[
-          ElevatedButton(onPressed: (){}, child: Text("HAPUS")),
+          ElevatedButton(onPressed: () => hapusData(), child: Text("HAPUS")),
           ElevatedButton(onPressed: ()=> Navigator.pop(context), child: Text("BATAL")),
         ],
     );
