@@ -19,10 +19,10 @@ class _TambahDataState extends State<TambahData> {
     var url = "http://10.0.2.2/my_crud_app/tambahdata.php";
 
     http.post(Uri.parse(url), body: {
-      "nosantri": controllerNomor.text,
-      "namasantri": controllerNama.text,
-      "asalsantri": controllerAsal.text,
-      "notelpsantri": controllerNotelp.text,
+      'nosantri': controllerNomor.text,
+      'namasantri': controllerNama.text,
+      'asalsantri': controllerAsal.text,
+      'notelpsantri': controllerNotelp.text,
     });
   }
 
