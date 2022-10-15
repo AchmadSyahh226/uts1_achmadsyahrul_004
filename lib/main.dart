@@ -29,6 +29,7 @@ class _MyAppState extends State<MyApp> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Data Santri Lomba FASI"),
+        backgroundColor: Colors.blue[600],
       ),
       floatingActionButton:
           FloatingActionButton(
