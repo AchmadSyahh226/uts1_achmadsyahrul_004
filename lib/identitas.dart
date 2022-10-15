@@ -18,14 +18,19 @@ class Identitas extends StatefulWidget {
 class _IdentitasState extends State<Identitas> {
 
   void hapusData(){
-    var url = "http://10.0.2.2/my_crud_app/tambahdata.php";
+    var url = "http://10.0.2.2/my_crud_app/hapusdata.php";
+    http.post(Uri.parse(url), body: {
+      'nosantri': widget.list[widget.index]['no_santri'],
+    });
   }
 
   void confirm(){
     AlertDialog alertDialog = AlertDialog(
         content: Text("Apakah Anda yakin ingin menghapus '${widget.list[widget.index]['nama_santri']}' ?"),
         actions: <Widget>[
-          ElevatedButton(onPressed: () => hapusData(), child: const Text("HAPUS")),
+          ElevatedButton(onPressed: () {
+            hapusData();
+          }, child: const Text("HAPUS")),
           ElevatedButton(onPressed: ()=> Navigator.pop(context), child: const Text("BATAL")),
         ],
     );
