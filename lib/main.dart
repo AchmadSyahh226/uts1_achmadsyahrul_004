@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Data Santri Lomba FASI"),
+        title: const Text("Data Santri Lomba Pildacil"),
         backgroundColor: Colors.blue[600],
       ),
       floatingActionButton:
