@@ -22,11 +22,11 @@ class _IdentitasState extends State<Identitas> {
   }
 
   void confirm(){
-    AlertDialog alertDialog = new AlertDialog(
+    AlertDialog alertDialog = AlertDialog(
         content: Text("Apakah Anda yakin ingin menghapus '${widget.list[widget.index]['nama_santri']}' ?"),
         actions: <Widget>[
-          ElevatedButton(onPressed: () => hapusData(), child: Text("HAPUS")),
-          ElevatedButton(onPressed: ()=> Navigator.pop(context), child: Text("BATAL")),
+          ElevatedButton(onPressed: () => hapusData(), child: const Text("HAPUS")),
+          ElevatedButton(onPressed: ()=> Navigator.pop(context), child: const Text("BATAL")),
         ],
     );
     showDialog(context: context, builder: (BuildContext context) => alertDialog, );
@@ -42,23 +42,23 @@ class _IdentitasState extends State<Identitas> {
           child: Center(
             child: Column(
               children: <Widget>[
-                Text(widget.list[widget.index]['nama_santri'], style: TextStyle(fontSize: 20),),
-                Text("Nomor Santri : ${widget.list[widget.index]['no_santri']}", style: TextStyle(fontSize: 20),),
-                Text("Asal : ${widget.list[widget.index]['asal_santri']}", style: TextStyle(fontSize: 20),),
-                Text("Nomor Telepon : ${widget.list[widget.index]['no_telp_santri']}", style: TextStyle(fontSize: 20),),
-                Padding(padding: const EdgeInsets.all(10),),
+                Text(widget.list[widget.index]['nama_santri'], style: const TextStyle(fontSize: 20),),
+                Text("Nomor Santri : ${widget.list[widget.index]['no_santri']}", style: const TextStyle(fontSize: 20),),
+                Text("Asal : ${widget.list[widget.index]['asal_santri']}", style: const TextStyle(fontSize: 20),),
+                Text("Nomor Telepon : ${widget.list[widget.index]['no_telp_santri']}", style: const TextStyle(fontSize: 20),),
+                const Padding(padding: EdgeInsets.all(10),),
                 
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     
                     ElevatedButton(
-                      child: Text("EDIT"),
-                      onPressed: () => Navigator.of(context).push(new MaterialPageRoute(
-                builder: (BuildContext context) => new EditData(list: widget.list, index: widget.index),
+                      child: const Text("EDIT"),
+                      onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (BuildContext context) => EditData(list: widget.list, index: widget.index),
                     ))),
                     ElevatedButton(
-                      child: Text("DELETE"),
+                      child: const Text("DELETE"),
                       onPressed: () => confirm() ,
                     ),
                 ],
