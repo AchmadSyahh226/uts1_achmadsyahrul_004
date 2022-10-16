@@ -1,4 +1,4 @@
-import 'package:crud_mobile_004_achmadsr/main.dart';
+import 'main.dart';
 import 'package:flutter/material.dart';
 import './Editdata.dart';
 import 'package:http/http.dart' as http;
@@ -8,7 +8,7 @@ class Identitas extends StatefulWidget {
 
   List list;
   int index;
-  Identitas({required this.index, required this.list});
+  Identitas({Key? key, required this.index, required this.list}) : super(key: key);
 
 
   @override
@@ -32,7 +32,7 @@ class _IdentitasState extends State<Identitas> {
           ElevatedButton(onPressed: () {
             hapusData();
             Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (BuildContext context) => MyApp()));
+                builder: (BuildContext context) => const MyApp()));
           }, child: const Text("HAPUS")),
           ElevatedButton(onPressed: ()=> Navigator.pop(context), child: const Text("BATAL")),
         ],
