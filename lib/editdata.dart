@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 class EditData extends StatefulWidget {
   final List list;
   final int index;
-  EditData({required this.list, required this.index});
+  const EditData({Key? key, required this.list, required this.index}) : super(key: key);
 
   @override
   State<EditData> createState() => _EditDataState();
