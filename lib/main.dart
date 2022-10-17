@@ -6,13 +6,15 @@ import './Identitas.dart';
 import './Tambahdata.dart';
 
 void main() {
-  runApp(MaterialApp(
-    title: "DATA SANTRI LOMBA FASI",
+  runApp(const MaterialApp(
+    title: "DATA SANTRI LOMBA PILDACIL",
     home: MyApp(),
   ));
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -40,7 +42,9 @@ class _MyAppState extends State<MyApp> {
       body: FutureBuilder<List>(
         future: ambilData(),
         builder: (context, snapshot) {
-          if (snapshot.hasError) print(snapshot.error);
+          if (snapshot.hasError) {
+            print(snapshot.error);
+          }
 
           return snapshot.hasData
               ? ItemList(
@@ -65,7 +69,7 @@ class ItemList extends StatelessWidget {
       itemCount: list == null ? 0 : list.length,
       itemBuilder: (context, i) {
         return Container(
-          padding: const EdgeInsets.all(3.0),
+          padding: const EdgeInsets.all(2.0),
           child: GestureDetector(
             onTap: () => Navigator.of(context).push(MaterialPageRoute(
                 builder: (BuildContext context) => Identitas(
