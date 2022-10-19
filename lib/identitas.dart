@@ -66,7 +66,7 @@ class _IdentitasState extends State<Identitas> {
                 builder: (BuildContext context) => EditData(list: widget.list, index: widget.index),
                     ))),
                     ElevatedButton(
-                      child: const Text("DELETE"),
+                      child: const Text("HAPUS"),
                       onPressed: () => confirm() ,
                     ),
                 ],
