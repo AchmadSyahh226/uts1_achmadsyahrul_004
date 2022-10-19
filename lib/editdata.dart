@@ -17,7 +17,7 @@ class _EditDataState extends State<EditData> {
   late TextEditingController controllerNotelp;
 
   void editData() {
-    var url = "http://10.0.2.2/my_crud_app/editdata.php";
+    var url = "http://10.0.2.2/my_app_crud/editdata.php";
 
     http.post(Uri.parse(url), body: {
       'nosantri': controllerNomor.text,

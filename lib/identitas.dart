@@ -19,7 +19,7 @@ class Identitas extends StatefulWidget {
 class _IdentitasState extends State<Identitas> {
 
   void hapusData(){
-    var url = "http://10.0.2.2/my_crud_app/hapusdata.php";
+    var url = "http://10.0.2.2/my_app_crud/hapusdata.php";
     http.post(Uri.parse(url), body: {
       'nosantri': widget.list[widget.index]['no_santri'],
     });

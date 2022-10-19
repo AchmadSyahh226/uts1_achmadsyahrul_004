@@ -16,7 +16,7 @@ class _TambahDataState extends State<TambahData> {
   TextEditingController controllerNotelp = TextEditingController();
 
   void tambahData(){
-    var url = "http://10.0.2.2/my_crud_app/tambahdata.php";
+    var url = "http://10.0.2.2/my_app_crud/tambahdata.php";
 
     http.post(Uri.parse(url), body: {
       'nosantri': controllerNomor.text,
